@@ -1,10 +1,7 @@
-from flask import Flask
+from fastapi import FastAPI
 
-app = Flask(__name__)
+app = FastAPI()
 
-@app.route('/', methods=['GET'])
+@app.get("/")
 def say_hi():
-    return "hi"
-
-if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=8080)
+    return {"message": "hi"}

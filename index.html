@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Frontend</title>
+</head>
+<body>
+
+<h2>Call Backend</h2>
+<button onclick="callAPI()">Call API</button>
+
+<p id="result"></p>
+
+<script>
+function callAPI() {
+  fetch("https://testing-hi-612299373064.asia-south1.run.app/")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("result").innerText = data.message;
+    })
+    .catch(err => {
+      document.getElementById("result").innerText = "Error: " + err;
+    });
+}
+</script>
+
+</body>
+</html>
